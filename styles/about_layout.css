@@ -1,0 +1,45 @@
+#nav li {
+  display: inline-block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+}
+
+#selected {
+  background-color: orange;
+  color: black;
+}
+
+#selected:hover {
+  background-color: black;
+}
+
+/*#wrapper {
+
+  margin: 0 auto;
+}*/
+
+/* SLIDING MOVEMENT */
+ #player2-col, #player3-col, .content {
+    transition: transform .5s linear;
+    -webkit-transition: transform .5s ease;
+}
+.move-player2 {
+    transform: translateX(-100%);
+}
+.move-player3 {
+    transform: translateX(-200%);
+}
+.move-content {
+    transform: translateX(-400%);
+}
+/*--------------------------------*/
+ #player1, #player2, #player3, .content {
+    transition: transform .7s ease;
+}
+[id^="content"] {
+    display: none;
+}
+div.container > div.row {
+    /*padding: 50px;*/
+}

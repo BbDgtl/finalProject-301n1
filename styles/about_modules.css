@@ -1,0 +1,29 @@
+.photo {
+  border-radius: 50%;
+  height: 10em;
+  width: 10em;
+}
+
+.container {
+  position: relative;
+}
+.portrait {
+  position: relative;
+  transition: all 2s ease;
+  -webkit-transition: all 2s ease;
+}
+.content {
+  background: #dadada;
+  height: 246px;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+/*.caption {
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: .5em;
+    padding-left: 1em;
+}*/
