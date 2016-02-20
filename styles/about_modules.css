@@ -7,18 +7,26 @@
 .container {
   position: relative;
 }
+
 .portrait {
   position: relative;
   transition: all 2s ease;
   -webkit-transition: all 2s ease;
 }
 .content {
-  background: #dadada;
-  height: 246px;
+  background: orange;
+  color: black;
+  font-size: 3em;
+  height: 123px;
   position: absolute;
   top: 0;
   display: none;
 }
+
+/*.row {
+  display: flex;
+  justify-content: space-around;
+}*/
 
 /*.caption {
     display: block;

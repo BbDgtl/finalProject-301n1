@@ -14,11 +14,6 @@
   background-color: black;
 }
 
-/*#wrapper {
-
-  margin: 0 auto;
-}*/
-
 /* SLIDING MOVEMENT */
  #player2-col, #player3-col, .content {
     transition: transform .5s linear;
@@ -41,5 +36,5 @@
     display: none;
 }
 div.container > div.row {
-    /*padding: 50px;*/
+    padding: 50px;
 }
