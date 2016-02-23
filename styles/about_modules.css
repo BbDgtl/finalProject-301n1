@@ -1,0 +1,42 @@
+.photo {
+  border-radius: 50%;
+  height: 10em;
+  width: 10em;
+}
+
+.container {
+  position: relative;
+}
+
+.portrait {
+  position: relative;
+  transition: all 2s ease;
+  -webkit-transition: all 2s ease;
+}
+.content {
+  background: orange;
+  color: black;
+  font-size: 1.5em;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+.social {
+  height: 3em;
+  width: 3em;
+}
+
+.row {
+  /*display: flex;
+  justify-content: space-around;*/
+}
+
+.caption {
+    display: block;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: .5em;
+    padding-right: 1.5em;
+}
