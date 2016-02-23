@@ -16,17 +16,22 @@
 .content {
   background: orange;
   color: black;
-  font-size: 3em;
-  height: 123px;
+  font-size: 1.5em;
+  height: 400px;
   position: absolute;
   top: 0;
   display: none;
 }
 
-/*.row {
-  display: flex;
-  justify-content: space-around;
-}*/
+.social {
+  height: 3em;
+  width: 3em;
+}
+
+.row {
+  /*display: flex;
+  justify-content: space-around;*/
+}
 
 /*.caption {
     display: block;

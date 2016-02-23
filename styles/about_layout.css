@@ -14,6 +14,11 @@
   background-color: black;
 }
 
+#socialMedia {
+  display: flex;
+  justify-content: space-around;
+}
+
 /* SLIDING MOVEMENT */
  #player2-col, #player3-col, .content {
     transition: transform .5s linear;
