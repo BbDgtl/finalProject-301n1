@@ -1,0 +1,142 @@
+
+
+/*Create html and contain your image in this ele*/
+html{
+  height: 100%;
+  background: url('../images/turn_table.png') no-repeat center center fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,700);
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+figure.turn_table {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  /*margin: 0px 1%;*/
+  min-width: 100%;
+  max-width: 1100px;
+  height: 728px;
+  max-height: 900px;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  -webkit-perspective: 50em;
+  perspective: 50em;
+  text-transform: uppercase;
+}
+
+figure.turn_table * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+figure.turn_table img {
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+
+figure.turn_table figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0;
+  padding: 3px 10px 30px 0px;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+/*figure,links and h1*/
+figure.turn_table h1,
+figure.turn_table .links {
+  width: 100%;
+  position: absolute;
+  margin: 5px 0px;
+  padding: 0;
+}
+
+figure.turn_table h1 {
+  line-height: 1.1em;
+  font-weight: 700;
+  font-size: 1.4em;
+  bottom: 50%;
+}
+
+figure.turn_table .links {
+  top: 50%;
+  font-size: 0.7em;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+figure.turn_table .links li {
+  display: inline-block;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+  opacity: 0;
+  list-style: none;
+}
+
+figure.turn_table a {
+  padding: 0px 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/*figure.turn_table a:hover {
+  color: #f39c12;*/
+}
+
+/*all of my hover effects below*/
+figure.turn_table:hover img,
+figure.turn_table.hover img {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+}
+
+figure.turn_table:hover figcaption,
+figure.turn_table.hover figcaption {
+  opacity: 1;
+  position: absolute;
+
+}
+
+figure.turn_table:hover li,
+figure.turn_table.hover li {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+figure.turn_table:hover li:first-child,
+figure.turn_table.hover li:first-child {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+figure.turn_table:hover li:nth-child(2),
+figure.turn_table.hover li:nth-child(2) {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+figure.turn_table:hover li:nth-child(3),
+figure.turn_table.hover li:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+#turn {
+  height: 100%;
+  width: 100%;
+}
