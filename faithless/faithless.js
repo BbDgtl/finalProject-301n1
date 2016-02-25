@@ -1,61 +1,14 @@
+
 //parallax//////////////////////////////////////////////////////
 var ypos,image;
-function parallex(){
+function parallax(){
   ypos = window.pageYOffset;
   image = document.getElementById('image');
   image.style.top = ypos * 0.5 +'px';
 
 }
-window.addEventListener('scroll',parallex)
+window.addEventListener('scroll',parallax)
 ///////////////////////////////////////////////////////////////
-
-var myArray =[];
-
-$(document).ready(function(){
-  $.ajax({
-    url:  "http://api.songkick.com/api/3.0/artists/480448/calendar.json?apikey=oleKZnXGwMwSb8es&jsoncallback=?",
-    dataType:"jsonp",
-    success: function(data){
-      $.each(data["resultsPage"]["results"]["event"], function(i, entry){
-        $("#events").append('<li><a href="' + entry.uri+'">'+entry.displayName +'</a></li>');
-
-    })
-    console.log(data);
-
-    for(var i=0; i< data.resultsPage.results.event.length; i++){
-      console.log(data.resultsPage.results.event[i].location.lat + ", "+ data.resultsPage.results.event[i].location.lng);
-      myArray.push(data.resultsPage.results.event[i].location.lat + ", "+ data.resultsPage.results.event[i].location.lng);
-
-    }
-
-    console.log(myArray);
-    console.log(myArray[0]);
-
-    // var showDate = data.resultsPage.results.event.start.date[i]
-
-    for(var i=0; i<data.resultsPage.results.event.length; i++){
-        console.log(data.resultsPage.results.event[i].start.date);
-        console.log(data.resultsPage.results.event[i].location.city);
-
-        var marker =L.marker(myArray[i].split(','), {icon: starIcon}).addTo(map);
-        marker.bindPopup("<b>Upcoming events!</b><br>" + "Date: "+ data.resultsPage.results.event[i].start.date +"<br>"+ "Location @ " +data.resultsPage.results.event[i].location.city).openPopup();
-
-    }
-    // for(var i=0; i<data.resultsPage.results.event.length, i<data.resultsPage.results.event.start.date[i]; i++){
-    //     var marker =L.marker(myArray[i].split(','), {icon: starIcon}).addTo(map);
-    //     var showDate = data.resultsPage.results.event.start.date[i];
-    //
-    //     marker.bindPopup("<b>Upcoming events!</b><br>" + "Date: " + showDate +"@ <br>").openPopup();
-    //
-    // }
-
-
-    }
-  })
-
-});
-
-///////////////////////////////////////////////////////////////////
 
 var starIcon = L.icon({
   iconUrl: 'star.jpg',
@@ -97,3 +50,66 @@ function onMapClick(e) {
 
   }
 map.on('click', onMapClick);
+
+
+//button///////////////////////////////////////////////////////
+
+var myArray = [];
+
+$("#submitButton").click(function(){
+//
+    // if ("#searchTxt").val()) {
+    //   ("#events").empty();
+    // }
+
+    window.open("faithless/faithless.html");
+    var searchResults = $("#myform").val();
+    console.log(searchResults);
+
+    $.ajax({
+    type:"GET",
+    url: "http://api.songkick.com/api/3.0/search/artists.json?query=" +"'"+searchResults+"'" +"&apikey=oleKZnXGwMwSb8es&jsoncallback=?",
+    dataType:'jsonp',
+    success: function(data){
+        console.log(data);
+        if (!data["resultsPage"]["results"]["artist"]){
+            alert("I see the TYPO, dude!")
+        }
+        var secSearch = data["resultsPage"]["results"]["artist"][0].id;
+        console.log(secSearch);
+
+        $.ajax({
+        type:"GET",
+        url:  "http://api.songkick.com/api/3.0/artists/" + secSearch +"/calendar.json?apikey=oleKZnXGwMwSb8es&jsoncallback=?",
+        dataType:'jsonp',
+        success: function(secSearch){
+            console.log(secSearch);
+            if (!secSearch["resultsPage"]["results"]["event"]){
+                alert("Sorry, no upcoming tour schedule.")
+            }
+            $.each(secSearch["resultsPage"]["results"]["event"], function(i,ele){
+              $("#events").append('<li><a href="' + ele.uri+'">' + ele.displayName +'</a></li>');
+
+            })
+            console.log(secSearch);
+
+            for(var i=0; i< secSearch.resultsPage.results.event.length; i++){
+                  console.log(secSearch.resultsPage.results.event[i].location.lat + ", "+ secSearch.resultsPage.results.event[i].location.lng);
+                  myArray.push(secSearch.resultsPage.results.event[i].location.lat + ", "+ secSearch.resultsPage.results.event[i].location.lng);
+                }
+                  console.log(myArray);
+
+            for(var i=0; i<secSearch.resultsPage.results.event.length; i++){
+                  console.log(secSearch.resultsPage.results.event[i].start.date);
+                  console.log(secSearch.resultsPage.results.event[i].location.city);
+
+            var marker =L.marker(myArray[i].split(','), {icon: starIcon}).addTo(map);
+            marker.bindPopup("<b>Upcoming events!</b><br>" + "Date: "+ secSearch.resultsPage.results.event[i].start.date +"<br>"+ "Location @ " +secSearch.resultsPage.results.event[i].location.city).openPopup();
+                }
+
+        }
+        })
+
+    }
+    })
+});
