@@ -1,4 +1,6 @@
-
+h1, h5, #submitButton {
+  font-family: "Josefin Sans";
+}
 
 /*Create html and contain your image in this ele*/
 html{
@@ -147,6 +149,13 @@ span {
 }
 
 #submitButton {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: auto;
+  margin-left: 12px;
+  margin-top: 10px;
+  height: 25px;
+  width: 75px;
   background-color: orange;
   color: white;
   text-decoration: bold;
@@ -168,5 +177,26 @@ span {
 }
 
 #aboutLink {
-  padding: 2em;
+  text-align: center;
+  font-size: 1.5em;
+  border: solid 1px orange;
+  color: orange;
+  margin: auto;
+  margin-top: 10em;
+  padding-top: 1.5em;
+  height: 4em;
+  width: 8em;
+}
+
+#aboutLink:hover {
+  background-color: orange;
+  color: black;
+}
+
+/*#artistSearch {
+  margin-top: .5em;
+}*/
+
+#myform {
+  margin-top: 1em;
 }

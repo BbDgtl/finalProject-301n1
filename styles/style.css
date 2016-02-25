@@ -110,3 +110,7 @@ video{
 #image{
   z-index: 13;
 }
+
+#aboutPage {
+  border: none;
+}
