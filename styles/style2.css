@@ -140,3 +140,33 @@ figure.turn_table.hover li:nth-child(3) {
   height: 100%;
   width: 100%;
 }
+
+span {
+  color: orange;
+  font-size: 2em;
+}
+
+#submitButton {
+  background-color: orange;
+  color: white;
+  text-decoration: bold;
+  border: none;
+}
+
+#submitButton:hover {
+  background-color: red;
+  text-decoration: bold;
+  color: black;
+}
+
+#bytes {
+  color: red;
+}
+
+#soundBytes {
+  padding-bottom: 3em;
+}
+
+#aboutLink {
+  padding: 2em;
+}
