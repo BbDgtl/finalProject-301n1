@@ -1,13 +1,15 @@
 
 body, div, h1, h2, p {
   margin: 0, padding: 0, border: 0;
+
 }
 
 body {
   text-align: center;
-  /*background: #fff;
+  background-color: black;
   font: 'EB Garamond', sans-serif;
-  color: #333;*/
+  color: lightgrey;
+
 }
 
 header {
@@ -32,8 +34,9 @@ header {
   width: 100%;
   position: relative;
   top: 600px;
-  background: #ebebeb;
+  background: black;
   height: 1500px;
+  font: white;
 }
 
 nav ul {
@@ -62,15 +65,17 @@ nav ul li:first-child {
 
 nav ul li a {
     display: block;
-    text-decoration: underline;
-    color: #FF5333;
-    opacity: 0.3;
+    /*text-decoration: underline;*/
+    font-family: sans-serif;;
+    color: deeppink;
+
+    opacity: 0.85;
     padding: 10px 0;
     position: relative;
 }
 
 .video-container {
-  position: absolute;
+  position: relative;
   top: 0%;
   left: 0%;
   height: 100%;
@@ -79,13 +84,13 @@ nav ul li a {
 }
 
 video{
-  position: absolute;
+  position: relative;
   z-index: -1;
-  opacity: 0.65;
+  opacity: 1;
   width: 100%;
 }
 /*From bootstrap*/
-video {
+/*video {
   display: inline-block;
   vertical-align: baseline;
 }
@@ -97,4 +102,15 @@ video {
   width: 100%;
   height: 100%;
   border: 0;
+}*/
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+}
+#image{
+  z-index: 13;
+}
+
+#aboutPage {
+  border: none;
 }
