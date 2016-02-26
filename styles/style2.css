@@ -176,7 +176,7 @@ span {
   padding-bottom: 3em;
 }
 
-#aboutLink {
+.aboutLink {
   text-align: center;
   font-size: 1.5em;
   border: solid 1px orange;
@@ -186,13 +186,22 @@ span {
   padding-top: 1.5em;
   height: 4em;
   width: 8em;
+  display: inline-block;
 }
 
-#aboutLink:hover {
+.aboutLink:hover {
   background-color: orange;
   color: black;
 }
 
 #myform {
   margin-top: 1em;
+}
+
+#searchButton {
+  margin: auto;
+}
+
+#aboutButton {
+  margin: auto;
 }
