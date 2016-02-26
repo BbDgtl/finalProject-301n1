@@ -10,24 +10,29 @@
 
   </head>
 
-  <h3><em>Tour calendar</em></h3>
+  <!-- <h3><em>Tour calendar</em></h3> -->
   <body>
     <img id='image' src='goldfrapp.jpg' height='690px' width=100%/>
 
-    <div><h2><em>Upcoming Concert Schedule: </h2></em>
-
+    <div>
+    <h2>Upcoming Concert Schedule : <br><p id='artist'></p></h2>
     <ul id='events'></ul>
-  </div>
+    </div>
 
-    <!-- <div class='searchField'>
-      <input id='searchTxt' type='text'></input>
-      <button id='artistSearchbtn' type='results'>Artist Search</button>
-    </div> -->
+    <div>
+      <!-- <form class="searchform cf">
+        <input id="searchTxt" type="text" placeholder="Is it me you're looking for?">
+        <button id="artistSearchBtn" type="submit">Fetch</button>
+      </form>
 
-    <!-- <div>
-      <input id='fSearch' type='Search'></input>
-      <button id='fSearch' type='fResults'>Fine Search</button>
-    </div> -->
+      <p>Dribbble Rebound of <a target="_blank" href="http://dribbble.com/shots/843289-Search-Bar?list=tags&tag=ui">Search Bar</a> by <a target="_blank" href="http://dribbble.com/craftyliang">Liang Shi</a></p> -->
+
+        <!-- <input id='searchTxt' type='text' placeholder="Is it me you're looking for?"></input>
+        <button id='artistSearchBtn' type='results'>Artist Search</button> -->
+        <input id="searchTxt" type="text" class="sfield" name="searchterm" maxlength="30" value="Search...">
+        <input id="artistSearchBtn" type="image" class="searchbutton" name="search" src="http://www.spheretekk.com/bc/images/search-icon.gif" alt="Search">
+
+    </div>
 
     <div>
       <iframe id='youtube' width="560" height="315" src="https://www.youtube.com/embed/JA9tOWeBxPQ" frameborder="0" allowfullscreen></iframe>

@@ -56,21 +56,24 @@ map.on('click', onMapClick);
 
 var myArray = [];
 
-$("#submitButton").click(function(){
+$("#artistSearchBtn").click(function(){
 //
     // if ("#searchTxt").val()) {
     //   ("#events").empty();
     // }
 
-    window.open("faithless/faithless.html");
-    var searchResults = $("#myform").val();
+    // window.open("faithless/faithless.html");
+    var searchResults = $("#searchTxt").val();
     console.log(searchResults);
+    // $("#artist").append(searchResults);
+
 
     $.ajax({
     type:"GET",
     url: "http://api.songkick.com/api/3.0/search/artists.json?query=" +"'"+searchResults+"'" +"&apikey=oleKZnXGwMwSb8es&jsoncallback=?",
     dataType:'jsonp',
     success: function(data){
+
         console.log(data);
         if (!data["resultsPage"]["results"]["artist"]){
             alert("I see the TYPO, dude!")
@@ -79,15 +82,22 @@ $("#submitButton").click(function(){
         console.log(secSearch);
 
         $.ajax({
+
         type:"GET",
         url:  "http://api.songkick.com/api/3.0/artists/" + secSearch +"/calendar.json?apikey=oleKZnXGwMwSb8es&jsoncallback=?",
         dataType:'jsonp',
         success: function(secSearch){
+            $("#events").empty();
+            $("#artist").empty();
+            $("#artist").append(searchResults);
+
             console.log(secSearch);
             if (!secSearch["resultsPage"]["results"]["event"]){
                 alert("Sorry, no upcoming tour schedule.")
             }
+
             $.each(secSearch["resultsPage"]["results"]["event"], function(i,ele){
+
               $("#events").append('<li><a href="' + ele.uri+'">' + ele.displayName +'</a></li>');
 
             })
